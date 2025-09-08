@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>상품 레이아웃</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* 상단 주목상품: 정사각형 썸네일 */
+    .thumb {
+      width: 120px;
+      height: 120px;
+      border-radius: .5rem;
+      object-fit: cover;
+      display: block;
+    }
+        /* 상단 주목상품: 정사각형 이미지 + 세로 카드 */
+    .thumb-block {
+      width: 140px;      /* 필요시 120~160px로 조절 */
+      height: 140px;
+      object-fit: cover;
+      border-radius: .5rem;
+      display: block;    /* 반드시 block으로 */
+    }
+
+    /* 하단 카드 이미지: 작은 정사각형 썸네일 */
+    :root { --grid-thumb: 160px; } /* 필요시 140~200px로 조절 */
+    .square-sm {
+      width: var(--grid-thumb);
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: .5rem;
+    }
+    .square-sm img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 카드 본문을 왼쪽에 딱 붙게 */
+    .card-body.p-0 .card-title,
+    .card-body.p-0 .card-text { margin-left: 0; }
+
+    /* 한 줄로 표시(… 처리). 상단 ‘주목 상품’에만 적용 */
+    .truncate-1 { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  </style>
+</head>
+<body>
+<div class="container my-4">
+        <!-- 아이템 2 -->
+<div class="card border-0 mb-3">
+<div class="row g-4 align-items-start">
+  <!-- 주목 상품: <992px 12칸, ≥992px 9칸 -->
+  <div class="col-12 col-lg-9">
+    <h5 class="mb-3">주목 상품</h5>
+
+    <!-- 상품 1 -->
+    <div class="card border-0 mb-3">
+      <img src="assets/product1.jpg" alt="상품 1" class="thumb-block">
+      <div class="card-body p-0 mt-2">
+        <h5 class="card-title m-0">상품 1</h5>
+        <p class="card-text truncate-1 mt-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.
+        </p>
+      </div>
+    </div>
+
+    <!-- 상품 2 -->
+    <div class="card border-0 mb-3">
+      <img src="assets/product2.jpg" alt="상품 2" class="thumb-block">
+      <div class="card-body p-0 mt-2">
+        <h5 class="card-title m-0">상품 2</h5>
+        <p class="card-text truncate-1 mt-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.
+        </p>
+      </div>
+    </div>
+
+    <!-- 상품 3 -->
+    <div class="card border-0 mb-3">
+      <img src="assets/product3.jpg" alt="상품 3" class="thumb-block">
+      <div class="card-body p-0 mt-2">
+        <h5 class="card-title m-0">상품 3</h5>
+        <p class="card-text truncate-1 mt-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 카테고리: <992px 숨김, ≥992px 3칸 -->
+  <aside class="col-lg-3 d-none d-lg-block">
+    <h5 class="mb-3">카테고리</h5>
+    <ul class="mb-0">
+      <li>카테고리 1</li>
+      <li>카테고리 2</li>
+      <li>카테고리 3</li>
+      <li>카테고리 4</li>
+    </ul>
+  </aside>
+</div>
+
+    <!-- 하단: 인기 / 신상품 / 특별 할인 -->
+    <!-- 규칙: xs 12칸, md(≥768,<992) offset 2 + col 10, lg(≥992) col 4 -->
+    <div class="row g-4 mt-4">
+      <!-- 인기 상품 -->
+      <section class="col-12 col-md-10 offset-md-2 offset-lg-0 col-lg-4">
+        <h5 class="mb-3">인기 상품</h5>
+
+        <div class="card border-0 mb-4">
+          <div class="square-sm">
+            <img src="assets/product4.jpg" alt="인기 1">
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h6 class="card-title m-0">상품 4</h6>
+            <p class="card-text mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+          </div>
+        </div>
+
+        <div class="card border-0">
+          <div class="square-sm">
+            <img src="assets/product5.jpg" alt="인기 2">
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h6 class="card-title m-0">상품 5</h6>
+            <p class="card-text mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 신상품 -->
+      <section class="col-12 col-md-10 offset-md-2 offset-lg-0 col-lg-4">
+        <h5 class="mb-3">신상품</h5>
+
+        <div class="card border-0 mb-4">
+          <div class="square-sm">
+            <img src="assets/product6.jpg" alt="신상품 1">
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h6 class="card-title m-0">상품 6</h6>
+            <p class="card-text mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+          </div>
+        </div>
+
+        <div class="card border-0">
+          <div class="square-sm">
+            <img src="assets/product7.jpg" alt="신상품 2">
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h6 class="card-title m-0">상품 7</h6>
+            <p class="card-text mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 특별 할인 -->
+      <section class="col-12 col-md-10 offset-md-2 offset-lg-0 col-lg-4">
+        <h5 class="mb-3">특별 할인</h5>
+
+        <div class="card border-0 mb-4">
+          <div class="square-sm">
+            <img src="assets/product8.jpg" alt="할인 1">
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h6 class="card-title m-0">상품 8</h6>
+            <p class="card-text mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+          </div>
+        </div>
+
+        <div class="card border-0">
+          <div class="square-sm">
+            <img src="assets/product9.jpg" alt="할인 2">
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h6 class="card-title m-0">상품 9</h6>
+            <p class="card-text mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor eu felis at tristique.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

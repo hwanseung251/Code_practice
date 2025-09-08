@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    body { 
+      padding: 40px; 
+    }
+    .login {
+      gap: 12px 12px;
+      align-items: center; 
+    }
+    label { 
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    input[type="text"], input[type="password"] {
+      font-size: 18px;
+      padding: 8px 12px;
+      border: 2px solid #bbb;
+      border-radius: 8px;
+      outline: none;
+    }
+    input:focus { border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2); 
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 18px;
+      border: 2px solid #777;
+      border-radius: 8px;
+      background: #e5e7eb;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="login" action="#" method="post">
+    <label for="username">USERNAME :</label>
+    <input id="username" name="username" type="text" placeholder="아이디를 입력 해 주세요.." required/>
+    <br>
+    <label for="pwd">PWD :</label>
+    <input id="'pwd" name="password" type="password" placeholder="" required />
+    <button type="submit">로그인</button>
+  </form>
+</body>
+</html>

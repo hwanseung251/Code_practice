@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSAFY 소개</title>
+  <style>
+    :root{
+      --text:#111;
+      --muted:#666;
+      --border:#222;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:32px 18px;
+      color:var(--text);
+      line-height:1.7;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+    .container{max-width:900px;margin:0 auto}
+
+    /* 상단 2열 레이아웃 */
+    .intro{
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    .logo{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .hero{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:8px;
+    }
+
+    h1{font-size:28px;margin:20px 0 6px}
+    h2{font-size:22px;margin:0 0 16px}
+    p{margin:0 0 12px}
+
+    hr{
+      border:none;
+      border-top:1px solid #ddd;
+      margin:24px 0;
+    }
+
+    /* 주관/후원: 정의목록 */
+    dl{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:6px 0 0;
+    }
+    dt{
+      font-weight:700;
+      color:var(--muted);
+    }
+    dd{margin:0;display:flex;align-items:center;gap:10px}
+    .badge{
+      height:24px;
+      width:auto;
+      vertical-align:middle;
+    }
+
+    /* 포인트 리스트 */
+    .features{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:36px;
+      margin-top:28px;
+    }
+    .feature{
+      display:grid;
+      grid-template-columns: 56px 1fr;
+      gap:16px;
+      align-items:center;
+    }
+    .emoji{
+      font-size:40px;
+      line-height:1;
+    }
+    .feature h3{
+      margin:0 0 6px;
+      font-size:20px;
+    }
+    .feature p{
+      margin:0;color:var(--muted)
+    }
+
+    /* 박스 테두리(샘플처럼) */
+    .outline{
+      border:2px solid var(--border);
+      border-radius:8px;
+      padding:18px;
+      margin-top:18px;
+    }
+
+    /* 반응형 */
+    @media (max-width:640px){
+      .intro{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- 상단: 로고 + 히어로 이미지 -->
+    <section class="intro">
+      <img class="logo" src="images/ssafy_logo.png" alt="SSAFY 로고" />
+      <figure class="outline">
+        <img class="hero" src="images/ssafy_banner.png" alt="SW 학습 이미지" />
+      </figure>
+    </section>
+
+    <!-- 제목/소개 -->
+    <section aria-labelledby="title">
+      <h1 id="title">삼성청년 SW아카데미</h1>
+      <h2><strong>대한민국 SW의 미래</strong>를 이끕니다.</h2>
+
+      <p>삼성의 SW 교육 경험과 고용노동부의 취업 지원 노하우를 바탕으로,
+        취업 준비생에게 SW 역량 향상 교육 및 다양한 취업지원 서비스를 제공하여
+        <strong>취업에 성공</strong>하도록 돕는 프로그램입니다.</p>
+
+      <p>본 교육과정은 삼성이 주관하고 고용노동부가 후원하며,
+        아이들과미래재단이 함께합니다. <small>(교육운영은 멀티캠퍼스에서 위탁 실시)</small></p>
+
+      <dl>
+        <dt>주관</dt>
+        <dd><img class="badge" src="images/multicampus_logo.png" alt="멀티캠퍼스 로고"></dd>
+        <dt>후원</dt>
+        <dd><img class="badge" src="images/mob_logo_moel.png" alt="고용노동부 로고"></dd>
+      </dl>
+    </section>
+
+    <hr>
+
+    <!-- 핵심 포인트 -->
+    <section class="features" aria-label="핵심 프로그램 특징">
+      <article class="feature">
+        <div class="emoji" aria-hidden="true">🍀</div>
+        <div>
+          <h3>최고의 교육</h3>
+          <p>현업 중심 커리큘럼과 실습 위주의 프로젝트로 실무 역량을 강화합니다.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="emoji" aria-hidden="true">🎯</div>
+        <div>
+          <h3>맞춤형 교육</h3>
+          <p>개인 수준에 맞춘 코칭과 단계별 학습 로드맵을 제공합니다.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="emoji" aria-hidden="true">🌸</div>
+        <div>
+          <h3>자기주도적 학습</h3>
+          <p>주도적으로 탐구하고 성장하는 학습 문화를 지원합니다.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
